@@ -1,0 +1,189 @@
+@import "fonts";
+
+* {
+    box-sizing: border-box;
+}
+
+*:focus-visible {
+    outline: none;
+}
+
+$color: #868b8f;
+$colorBordder: #fefefe;
+
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    h1,
+    h2,
+    h3 {
+        margin: 0;
+    }
+
+    p {
+        margin: 0;
+        line-height: 28px;
+        color: $color;
+    }
+
+    a {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        line-height: 0;
+        color: $color;
+    }
+
+    .modal {
+        padding: 40px 25px;
+        vertical-align: text-bottom;
+        border-radius: 20px;
+        box-shadow: none;
+
+        & a.close-modal[class*="icon-"] {
+            top: -22px;
+            right: 46%;
+            width: 43px;
+            height: 43px;
+            padding-top: 12px;
+            color: #fff;
+            line-height: 1.25;
+            text-align: center;
+            text-decoration: none;
+            text-indent: 0;
+            background: #b44ccf;
+            border-radius: 50%;
+            border: none;
+            box-shadow: none;
+        }
+
+        .table {
+            .td1 {
+                width: 40%;
+                padding: 5px 0px;
+            }
+
+            .td2 {
+                display: -webkit-box;
+                padding: 5px 0px;
+                color: $color;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .td3 {
+                padding: 17px 0px 0px;
+            }
+
+            .td4 {
+                width: 100%;
+                color: $color;
+            }
+        }
+    }
+
+    .jquery-modal.blocker.current {
+        padding-top: 100px;
+    }
+}
+
+.container {
+    max-width: 1290px;
+    margin: 20px auto;
+
+    .form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+        padding: 5px 20px;
+        border-radius: 30px;
+        outline: 1px solid $color;
+
+        &__search {
+            width: calc(100% - 50px);
+            height: 45px;
+            border: none;
+        }
+
+        &__btn {
+            width: 35px;
+            height: 35px;
+            padding: 0px;
+            line-height: 0;
+            background: url(../img/search.jpg) right center no-repeat transparent;
+            border: none;
+        }
+    }
+
+    .card__container {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap: 30px;
+
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 50px 30px 114px;
+            border-radius: 20px;
+            box-shadow: 18px 20px 20px rgb(249, 249, 250), -7px 20px 20px rgb(249, 249, 250);
+            box-sizing: initial;
+
+            &::after {
+                content: "";
+                position: absolute;
+                height: 360px;
+                width: 100%;
+                top: -30px;
+                left: -45px;
+                padding: 30px 30px 50px;
+                border: 15px double $colorBordder;
+                border-radius: 65px;
+                pointer-events: none;
+                box-sizing: initial;
+            }
+            &--modal {
+                padding: 20px;
+                box-shadow: none;
+
+                &::after {
+                    display: none;
+                }
+            }
+
+            .user {
+                margin-bottom: 50px;
+            }
+
+            .phone {
+                margin-bottom: 20px;
+                padding-left: 30px;
+                color: $color;
+                background: url(../img/phone.jpg) left center no-repeat transparent;
+                background-size: contain;
+            }
+
+            .email {
+                padding-left: 30px;
+                color: $color;
+                background: url(../img/mail.jpg) left center no-repeat transparent;
+            }
+        }
+    }
+}
